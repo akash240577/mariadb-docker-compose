@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  mariadb-container:
+    image: mariadb:10.2
+    container_name: mariadb-container
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=Pa55word
+      - MYSQL_DATABASE=GWN_R5
+      - MYSQL_USER=r5user
+      - MYSQL_PASSWORD=r5user
+    ports:
+      - 3310:3306
+    volumes:
+      - /opt/mariadb/data:/var/lib/mysql
